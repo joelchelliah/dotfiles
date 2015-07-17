@@ -59,6 +59,10 @@ prompt_git() {
 	fi;
 }
 
+current_working_dir() {
+	pwd 2> /dev/null | sed 's/\(\/.*\)\/\(.*\)/\2 /' | sed "s/$USER/home/" | tr 'a-z' 'A-Z'
+}
+
 if tput setaf 1 &> /dev/null; then
 	tput sgr0; # reset colors
 	bold=$(tput bold);
@@ -103,8 +107,10 @@ else
 	hostStyle="${yellow}";
 fi;
 
-# Set the terminal title to the current working directory.
-PS1="\[\033]0;\w\007\]";
+# Set tab name
+PS1="\[\033]0;\$(current_working_dir) \007\]"
+
+# Set prompt name
 PS1+="\[${bold}\]\n"; # newline
 PS1+="\[${userStyle}\]\u"; # username
 # Uncomment to also see host
