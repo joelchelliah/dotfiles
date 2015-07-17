@@ -31,7 +31,8 @@ alias irb='irb --readline -r irb/completion'
 alias man='_() { echo $1; man -M $(brew --prefix)/opt/coreutils/libexec/gnuman $1 1>/dev/null 2>&1;  if [ "$?" -eq 0 ]; then man -M $(brew --prefix)/opt/coreutils/libexec/gnuman $1; else man $1; fi }; _'
 
 
-# Git aliases
+# Git aliases.
+# Shorter than in .gitconfig since you don't need the 'git' prefix
 alias go='git co'
 alias gb='git br'
 alias gs='git st'
@@ -50,5 +51,5 @@ alias gsd="git stash drop"
 alias gsa="git stash apply"
 alias gss="git stash save"
 alias gsl="git stash list"
-
-
+alias gl="git l"
+alias gh="git hist"
