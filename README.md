@@ -97,9 +97,9 @@ ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/loca
 
 
 ### OSX defaults :floppy_disk:
-Sensible defaults to OS X Preferences, settings, and some apps!
+Various OS X tweaks, and some sensible defaults to preferences and settings for OS X, and a few apps.
 
-Most effective when run on a brand new Mac (so that it doesn't overwrite any existing settings). Run this once from the **new_mac** folder.
+Most effective when run on a brand new Mac (so that it doesn't overwrite any existing settings). Run this once.
 
 ```bash
 ./new_mac/.osx
@@ -107,8 +107,6 @@ Most effective when run on a brand new Mac (so that it doesn't overwrite any exi
 
 ### Homebrew :beer:
 Install brew and some essential brew formulaes!
-
-Run this once from the **new_mac** folder.
 
 ```bash
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"	
