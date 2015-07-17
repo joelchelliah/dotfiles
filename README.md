@@ -1,12 +1,12 @@
 # Joel's Dotfiles
 
-My dotfiles setup, including a recipe for getting a new Mac (Yosemite++) up and running from scratch.
+My dotfiles setup, including a recipe for getting a new Mac (Yosemite+) up and running from scratch.
 
-For setting up all the dotfiles there is an **install_dotfiles.sh** script that does the job. For setting up a brand new Mac there are som additional scripts in the **new_mac/** folder and a list of recommended apps, settings and preferences further down.
+For installing all the dotfiles there is an **install_dotfiles.sh** script. For setting up a brand new Mac there are som additional scripts in the **new_mac/** folder and a list of recommended apps, settings and preferences further down.
 
 ## Installing dotfiles
 
-The **install_dotfiles.sh** script will pull in the latest version and copy the files to your home folder. It will **not** copy the files in the **new_mac/** folder. If you are setting up a new mac run those files manually (as described in the later sections).
+The **install_dotfiles.sh** script will pull in the latest version and copy the files to your home folder. It will **not** copy the files in the **new_mac/** folder. You can [run those manually](#osx-defaults-floppy_disk) if you are setting up new Mac.
 
 You need to have set up **git** to get started:
 
@@ -16,7 +16,7 @@ You need to have set up **git** to get started:
 
 ```bash
 # Generate ssh key
-ssh-keygen -t rsa -C "joel.chelliah@bekk.no"
+ssh-keygen -t rsa -C "your.email@xxx.yy"
 
 # Add ssh key to ssh-agent
 eval "$(ssh-agent -s)"
@@ -29,18 +29,18 @@ subl ~/.ssh/id_rsa.pub
 ssh -T git@github.com
 
 # Set git config values
-git config --global user.name "Joel Chelliah"
-git config --global user.email "joel.chelliah@bekk.no"
+git config --global user.name # <NAME>
+git config --global user.email # <EMAIL>
 ```
 
 ### Installation
 
-Clone project anywhere and run the **install_dotfiles.sh** script.
+Clone the project anywhere and run the **install_dotfiles.sh** script.
 
 ```bash
 git clone ??? && cd dotfiles && source install_dotfiles.sh
 ```
-If you get any errors in the terminal after installation, it's probably due to missing dependecies (like a newer version of **git** or **bash**). They should all go away after running **new_mac/.brew_setup** later on.
+If you get any errors in the terminal after installation, it's probably due to missing dependecies (like a newer version of **git** or **bash** that you are missing). They should all go away after running **new_mac/.brew_setup**.
 
 
 ## Setting up a new Mac
@@ -97,9 +97,7 @@ ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/loca
 
 
 ### OSX defaults :floppy_disk:
-Various OS X tweaks, and some sensible defaults to preferences and settings for OS X, and a few apps.
-
-Most effective when run on a brand new Mac (so that it doesn't overwrite any existing settings). Run this once.
+Various OS X tweaks, and some sensible defaults to preferences and settings for OS X, and a few apps. Most effective when run on a brand new Mac (so that it doesn't overwrite any existing settings). Run this once.
 
 ```bash
 ./new_mac/.osx
