@@ -28,3 +28,23 @@ function json() {
 function tre() {
 	tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
 }
+
+
+# Git: Commit with branch name in title
+gcwb () { git commit -m "$(git rev-parse --abbrev-ref HEAD): $1"; }
+
+# Git: Delete branch, locally and/or remote
+delbr () { 
+	if [ $# -eq 1 ]
+	then
+		echo "> Deleting local branch: $1"
+		git branch -D $1
+	elif [ $# -eq 2 ] && [ $1 == "--remote" ]
+	then 
+		echo "> Deleting local and remote branch: $2"
+		git branch -D $2
+		git push origin --delete $2
+	else
+		echo "> command : delbr [--remote] <branch-name>"
+	fi
+}

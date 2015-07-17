@@ -1,5 +1,21 @@
+######################################## Exports ########################################
+
+# bin
+export BIN=$HOME/bin
+
+# Java Home
+export JAVA_HOME=$(/usr/libexec/java_home)
+
+# Default editor
+export EDITOR='subl -w'
+
+
+
+######################################### Paths #########################################
+
 # Add `~/bin` to the `$PATH`
-export PATH="$HOME/bin:$PATH";
+export PATH=$BIN:$PATH
 
 # coreutils
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH";
+
