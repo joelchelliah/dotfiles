@@ -70,6 +70,7 @@ ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/loca
 ```
 - Install **package control**: https://packagecontrol.io/installation#st3
 - Install package: **Theme Afterglow**
+- Install package: **View in Browser**
 - Sublime Text > Preferences > *Settings - User*:
 
 ```json
@@ -86,6 +87,15 @@ ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/loca
 	"color_scheme": "Packages/Theme - Afterglow/Afterglow.tmTheme",
 	"translate_tabs_to_spaces": false
 }
+```
+
+- Sublime Text > Preference > *Key Bindings - User*:
+
+```json
+[
+    { "keys": [ "ctrl+alt+v" ], "command": "view_in_browser", "args": { "browser": "chrome" } },
+    { "keys": [ "ctrl+alt+shift+v" ], "command": "view_in_browser", "args": { "browser": "firefox" } }
+]
 ```
 
 ### iTerm setup
