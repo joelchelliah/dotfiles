@@ -1,8 +1,8 @@
 # Joel's Dotfiles
 
-My dotfiles setup, including a recipe for getting a new Mac (Yosemite+) up and running from scratch.
+My dotfiles, and recipe for setting up a new Mac!
 
-For installing all the dotfiles there is an **install_dotfiles.sh** script. For setting up a brand new Mac there are som additional scripts in the **new_mac/** folder and a list of recommended apps, settings and preferences further down.
+For installing all the dotfiles there is an **install_dotfiles.sh** script. For setting up a brand new Mac there are som additional scripts in the **new_mac/** folder and a list of recommended apps, settings and preferences further below.
 
 ## Installing dotfiles
 
@@ -12,7 +12,7 @@ You need to have set up **git** to get started:
 
 ### Initial Git setup
 
-:exclamation: [Skip this part if you already have git set up on your Mac](#installation).
+[Skip this part if you already have git set up on your Mac](#installation).
 
 ```bash
 # Generate ssh key
@@ -62,7 +62,30 @@ Essential apps, preferences and default settings for getting started on a new Ma
 - [Spectacle](http://spectacleapp.com/)
 
 
-### Sublime setup
+
+### OSX defaults :floppy_disk:
+Various OS X tweaks, and some sensible defaults to preferences and settings for OS X. Most effective when run on a brand new Mac (so that it doesn't overwrite any existing settings). Run this once.
+
+```bash
+./new_mac/.osx
+```
+
+### Homebrew :beer:
+Install brew and some essential brew formulaes!
+
+```bash
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"	
+brew doctor
+
+# Install things with brew
+./new_mac/.brew-setup
+
+```
+
+### Final setup and fine tuning :wrench:
+Some additional settings that aren't (yet) automated through the **new_mac/.osx** script.
+
+#### Sublime setup
 - Add **subl** command:
 
 ```bash
@@ -71,7 +94,7 @@ ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/loca
 - Install **package control**: https://packagecontrol.io/installation#st3
 - Install package: **Theme Afterglow**
 - Install package: **View in Browser**
-- Sublime Text > Preferences > *Settings - User*:
+- Sublime Text > Preferences > **Settings - User**:
 
 ```json
 {
@@ -89,7 +112,7 @@ ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/loca
 }
 ```
 
-- Sublime Text > Preference > *Key Bindings - User*:
+- Sublime Text > Preference > **Key Bindings - User**:
 
 ```json
 [
@@ -98,32 +121,14 @@ ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/loca
 ]
 ```
 
-### iTerm setup
-- Profiles > Terminal > *Scrollback Lines*: 5000
-- More settings installed through **new_mac/.osx**.
-	
-### Other setup
-- Settings for other apps (including Google Chrome and Spectacle.app) installed through **new_mac/.osx**.
+#### iTerm setup
+- Profiles > Terminal > **Scrollback Lines**: 5000
+- Profiles > Colors > **Load Preset**: Solarized Joel
+  - (should be available if you have run **new_mac/.osx**)
 
 
-### OSX defaults :floppy_disk:
-Various OS X tweaks, and some sensible defaults to preferences and settings for OS X, and a few apps. Most effective when run on a brand new Mac (so that it doesn't overwrite any existing settings). Run this once.
+### Done! :boom:
 
-```bash
-./new_mac/.osx
-```
-
-### Homebrew :beer:
-Install brew and some essential brew formulaes!
-
-```bash
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"	
-brew doctor
-
-# Install things with brew
-./new_mac/.brew-setup
-
-```
 ## Thanks to
 - [Kevin Elliot's Yosemite setup](https://gist.github.com/kevinelliott/0726211d17020a6abc1f)
 - [Mathias Bynen's dotfiles](https://github.com/mathiasbynens/dotfiles)
