@@ -269,7 +269,7 @@ echo "Iterm2"                                                                 #
 ###############################################################################
 
 # Install the Solarized Dark theme for iTerm: http://ethanschoonover.com/solarized
-open "${HOME}/init/Solarized Dark.itermcolors"
+open "${HOME}/init/Solarized Joel.itermcolors"
 
 # Don’t display the annoying prompt when quitting iTerm
 defaults write com.googlecode.iterm2 PromptOnQuit -bool false
