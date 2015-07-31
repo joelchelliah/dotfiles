@@ -1,16 +1,21 @@
 [alias]
 
+	# Basic shortcuts
 	ci = commit
-  co = checkout
-  st = status -sb
-  br = branch
-  unstage = reset HEAD
+	co = checkout
+	st = status -sb
+	br = branch
+	unstage = reset HEAD
+
+  # Undo / redo last commit
   undo = reset --soft HEAD^
   redo = commit -C ORIG_HEAD
-	hist = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen | %ad (%cr) | %C(bold blue)<%an>%Creset' --abbrev-commit --date=short
 
 	# View abbreviated SHA, description, and history graph of the latest 20 commits
 	l = log --pretty=oneline -n 20 --graph --abbrev-commit
+
+	# Same as 'git l' but with commit date and username
+	hist = log --color --graph --pretty=format:'%C(yellow)%h%Creset%C(red)%d%Creset %s %Cgreen | %ad (%cr) | %C(bold blue)<%an>%Creset' --abbrev-commit --date=short
 
 	# Show the diff between the latest commit and the current state
 	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
@@ -48,8 +53,7 @@
 	fm = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
 
 	# Remove branches that have already been merged with master
-	# a.k.a. ‘delete merged’
-	dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+	dm = "!git branch --merged | grep -v '\\*\\|\\master' | xargs -n 1 git branch -d"
 
 	# List contributors with number of commits
 	contributors = shortlog --summary --numbered
@@ -68,6 +72,9 @@
 	# Prevent showing files whose names contain non-ASCII symbols as unversioned.
 	# http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
 	precomposeunicode = false
+
+	# Configure Git on OS X to properly handle line endings
+	autocrlf = input
 
 [color]
 
@@ -100,6 +107,7 @@
 	renames = copies
 
 [diff "bin"]
+
 	# Use `hexdump` to diff binary files
 	textconv = hexdump -v -C
 
