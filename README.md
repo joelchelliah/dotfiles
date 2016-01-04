@@ -50,6 +50,7 @@ Essential apps, preferences and default settings for getting started on a new Ma
 - Alfred
 - Xcode
 - Slack
+- Todoist
 
 
 ### Install software (from the web)
