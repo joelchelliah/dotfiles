@@ -117,6 +117,8 @@ ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/loca
 
 ```json
 [
+		{ "keys": ["super+d"], "command": "duplicate_line" },
+		{ "keys": ["super+backspace"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} },
     { "keys": [ "ctrl+alt+v" ], "command": "view_in_browser", "args": { "browser": "chrome" } },
     { "keys": [ "ctrl+alt+shift+v" ], "command": "view_in_browser", "args": { "browser": "firefox" } }
 ]
