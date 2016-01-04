@@ -51,6 +51,7 @@ Essential apps, preferences and default settings for getting started on a new Ma
 - Xcode
 - Slack
 - Todoist
+- Dash
 
 
 ### Install software (from the web)
