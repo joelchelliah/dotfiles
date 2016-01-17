@@ -44,7 +44,7 @@ If you get any errors in the terminal after installation, it's probably due to m
 
 
 ## Setting up a new Mac
-Essential apps, preferences and default settings for getting started on a new Mac.
+My apps, preferences and default settings for getting started on a new Mac.
 
 ### Install software (from App store)
 - Alfred
@@ -52,6 +52,7 @@ Essential apps, preferences and default settings for getting started on a new Ma
 - Slack
 - Todoist
 - Dash
+- LastPass
 
 
 ### Install software (from the web)
@@ -62,6 +63,7 @@ Essential apps, preferences and default settings for getting started on a new Ma
 - [Skype](http://www.skype.com/en/download-skype/skype-for-computer/)
 - [Iterm2](https://www.iterm2.com/)
 - [Spectacle](http://spectacleapp.com/)
+- [LastPass plugins](https://lastpass.com/misc_download2.php)
 
 
 
