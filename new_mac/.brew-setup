@@ -58,7 +58,10 @@ brew install ack
 brew install curl
 brew install tree
 brew install speedtest_cli
+brew install node
 
+# https://github.com/stevemao/diff-so-fancy
+npm install -g diff-so-fancy
 
 ###############################################################################
 echo "Remove outdated versions from the cellar."															#

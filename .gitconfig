@@ -55,6 +55,12 @@
 	# Remove branches that have already been merged with master
 	dm = "!git branch --merged | grep -v '\\*\\|\\master' | xargs -n 1 git branch -d"
 
+	# Diff so fancy
+	dsf = "!git diff --color $@ | diff-so-fancy"
+
+	# Diff not so fancy
+	dnsf = "!git --no-pager diff"
+
 	# List contributors with number of commits
 	contributors = shortlog --summary --numbered
 
@@ -76,6 +82,9 @@
 	# Configure Git on OS X to properly handle line endings
 	autocrlf = input
 
+	# Diff so fancy
+	pager = diff-highlight | diff-so-fancy | less -r
+
 [color]
 
 	# Use colors in Git commands that are capable of colored output when
@@ -91,9 +100,10 @@
 [color "diff"]
 
 	meta = yellow bold
+	commit = green bold
 	frag = magenta bold # line info
-	old = red # deletions
-	new = green # additions
+	old = red bold      # deletions
+	new = green bold    # additions
 
 [color "status"]
 
