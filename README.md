@@ -53,6 +53,7 @@ My apps, preferences and default settings for getting started on a new Mac.
 - Todoist
 - Dash
 - LastPass
+- Pocket
 
 
 ### Install software (from the web)
@@ -64,6 +65,7 @@ My apps, preferences and default settings for getting started on a new Mac.
 - [Iterm2](https://www.iterm2.com/)
 - [Spectacle](http://spectacleapp.com/)
 - [LastPass plugins](https://lastpass.com/misc_download2.php)
+- [Pocket plugins](https://chrome.google.com/webstore/detail/save-to-pocket/niloccemoadcdkdjlinkgdfekeahmflj?hl=en)
 
 
 

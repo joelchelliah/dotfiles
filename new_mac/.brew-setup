@@ -62,6 +62,8 @@ brew install node
 
 # https://github.com/stevemao/diff-so-fancy
 npm install -g diff-so-fancy
+git config --global pager.diff "diff-so-fancy | less --tabs=1,5 -R"
+git config --global pager.show "diff-so-fancy | less --tabs=1,5 -R"
 
 ###############################################################################
 echo "Remove outdated versions from the cellar."															#
