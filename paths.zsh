@@ -43,3 +43,6 @@ export PATH=$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/
 
 ## ---------------------- ITERM2 SCRIPTS ----------------------
 export PATH=$PATH:$HOME/Library/Application\ Support/iTerm2/Scripts
+
+## -------------------------- ENTUR ---------------------------
+export ENTUR_DEPLOY_SLACK_WEBHOOK="REDACTED"
