@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+
+# TODO: Under construction 🛠
+# DO NOT USE YET!
+
+
 cd "$(dirname "${BASH_SOURCE}")";
 
 git pull origin master;
