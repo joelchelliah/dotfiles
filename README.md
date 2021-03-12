@@ -1,13 +1,6 @@
-# Joel's Dotfiles
+# 🚀 Dotfiles and setup for new Mac!
 
-Currently reworking this repo 🛠
-
-So no actual dotfiles are here anymore... Just run `setup.sh`.
-
-
-( 🙈 Don't run `install_dotfiles.sh`. It needs work... )
-
-## TODO
-- Add relevant dotfiles to the repo.
-- Fix `install_dotfiles.sh`.
-- Update `setup.sh` to initiate dotfiles installation.
+1. Run `setup.sh`.
+2. Copy any dotfiles to wherever they belong.
+3. ...
+4. Profit? 🤔
