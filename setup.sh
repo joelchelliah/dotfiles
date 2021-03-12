@@ -42,6 +42,7 @@ echo "Installing other brew stuff..."
 brew install tree
 brew install wget
 brew install node
+brew install rbenv
 
 
 ### Brew done
