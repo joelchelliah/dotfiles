@@ -1,16 +1,16 @@
 [user]
-	name = Joel Chelliah
-	email = joel.chelliah@bekk.no
+    name = Joel Chelliah
+    email = joel.chelliah@bekk.no
 [github]
-	user = joelchelliah
+    user = joelchelliah
 [alias]
-  ci = commit
-  co = checkout
-  st = status -sb
-  br = branch
-  unstage = reset HEAD
-  undo = reset --soft HEAD^
-  redo = commit -C ORIG_HEAD
+    ci = commit
+    co = checkout
+    st = status -sb
+    br = branch
+    unstage = reset HEAD
+    undo = reset --soft HEAD^
+    redo = commit -C ORIG_HEAD
     hist = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen | %ad (%cr) | %C(bold blue)<%an>%Creset' --abbrev-commit --date=short
 
     # View abbreviated SHA, description, and history graph of the latest 20 commits
@@ -78,7 +78,7 @@
     autocrlf = input
 
     # Default diff to diff-so-fancy: https://github.com/stevemao/diff-so-fancy
-	pager = diff-so-fancy | less --tabs=1,5 -R
+    pager = diff-so-fancy | less --tabs=1,5 -R
 
 [color]
     ui = always
@@ -130,8 +130,8 @@
     followTags = true
 
 [credential]
-	helper = osxkeychain
+    helper = osxkeychain
 [filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
-	required = true
+    clean = git-lfs clean %f
+    smudge = git-lfs smudge %f
+    required = true
