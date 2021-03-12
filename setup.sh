@@ -103,10 +103,7 @@ apps=(
 
 # Install apps to /Applications
 # Default is: /Users/$user/Applications
-brew cask install --appdir="/Applications" ${apps[@]}
-
-brew cask alfred link
-
+brew install --cask --appdir="/Applications" ${apps[@]}
 brew cleanup
 
 
@@ -177,7 +174,6 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
 #"Enabling snap-to-grid for icons on the desktop and in other icon views"
 /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
-/usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
 /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
 
 #"Setting the icon size of Dock items to 36 pixels for optimal size/screen-realestate"
