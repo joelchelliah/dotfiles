@@ -12,15 +12,9 @@ Might need to run again partially if there are any hiccups.
 
 
 ## 📝 Git config
-Copy **.gitconfig** to the `$HOME` folder.
-
-
-## 💃 Fancy diffs!
-Install **diff-so-fancy** via `npm install -g diff-so-fancy`.  
-> NB: `git diff` won't work until this step is done.
-
-No extra configuration needed (it's already set up in **.gitconfig**).
-- 📚 Find more info [here](https://github.com/so-fancy/diff-so-fancy).
+1. Copy **.gitconfig** to the `$HOME` folder.
+2. Install **diff-so-fancy** via `npm install -g diff-so-fancy`.  
+   > NB: `git diff` won't work until this step is done.
 
 
 ## 🐚 Oh my ZSH setup
@@ -46,7 +40,7 @@ git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/theme
 ```
 - 📚 Find more info [here](https://github.com/bhilburn/powerlevel9k/wiki/Install-Instructions#option-2-install-for-oh-my-zsh)
 
-#### :link: Symlink `.zshrc`
+#### 🔗 Symlink `.zshrc`
 ```bash
 # Delete existing .zshrc
 rm ~/.zshrc
@@ -55,11 +49,11 @@ rm ~/.zshrc
 ln -s ~/.oh-my-zsh/custom/zshrc ~/.zshrc
 ```
 
-## :tophat: Iterm2 configuration
+## 🎩 Iterm2 config
 Download and install iterm2 theme and powerlevel9k-supported font [here](https://github.com/joelchelliah/oh-my-zsh-custom/tree/master/iterm2-config)
 
 
-## 📱 For iPhone development
+## 📱 iPhone dev config
 - Install **Xcode** from the `App Store`.
 - Run `sudo xcodebuild -license` in the terminal and accept the license manually.
 
