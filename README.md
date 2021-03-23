@@ -1,12 +1,11 @@
 # 🚀 Dotfiles and setup for new Mac!
 
-If running on a new Mac, remember to update it to the lastest version before proceeding.
+When running on a brand new Mac, remember to update it to the lastest version before proceeding (**About this mac** → **Software update**).
 
-**LET'S DO THIS!**
 
 
 ## 🛠️ Essential apps, tools and settings
-Run `setup.sh` and follow instructions.
+Run `setup.sh` and follow the instructions.
 
 Might need to run again partially if there are any hiccups.
 
@@ -18,12 +17,14 @@ Might need to run again partially if there are any hiccups.
 
 
 ## 🐚 Oh my ZSH setup
-Should have already been installed during `setup.sh`. Check by running `omz`. If not yet install, run:
+Should have already been installed during `setup.sh`.
+
+Check by running `omz`. If not yet installed, run:
 ```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 
-- 📚 Find more info [here](https://github.com/robbyrussell/oh-my-zsh).
+- More info [here](https://github.com/robbyrussell/oh-my-zsh).
 
 #### :octocat: Clone custom settings
 ```bash
@@ -38,7 +39,7 @@ git clone git@github.com:joelchelliah/oh-my-zsh-custom.git ~/.oh-my-zsh/custom
 ```bash
 git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 ```
-- 📚 Find more info [here](https://github.com/bhilburn/powerlevel9k/wiki/Install-Instructions#option-2-install-for-oh-my-zsh)
+- More info [here](https://github.com/bhilburn/powerlevel9k/wiki/Install-Instructions#option-2-install-for-oh-my-zsh)
 
 #### 🔗 Symlink `.zshrc`
 ```bash
