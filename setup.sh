@@ -1,44 +1,44 @@
 #!/usr/bin/env bash
 
-echo "Creating an SSH key for you..."
+echo -e "Creating an SSH key for you..."
 ssh-keygen -t rsa -C "joel.chelliah@bekk.no"
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_rsa
 
-echo "Please add this public key to Github \n"
-echo "https://github.com/account/ssh \n"
+pbcopy < ~/.ssh/id_rsa.pu
+echo -e "Public key has been copied to the clipboard. Please add this public key to Github at:"
+echo -e "https://github.com/account/ssh \n"
 read -p "Press [Enter] key after this..."
 
 
-### Xcode
-echo "Installing xcode-stuff"
+# ### Xcode
+echo -e "Installing xcode-stuff"
 
 xcode-select --install
 
 
 ### Update homebrew recipes
-echo "Installing / updating homebrew..."
+echo -e "Installing / updating homebrew..."
 
 if test ! $(which brew); then
-  echo "Installing homebrew..."
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  echo -e "Installing homebrew..."
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
-brew update
-brew upgrade --all
+read -p "Press [Enter] key after brew setup is finished..."
 
+brew update
+brew upgrade
 
 ### Git
-echo "Installing Git..."
+echo -e "Installing Git..."
 brew install git
 
-echo "Git config"
-git config --global user.name "Joel Chelliah"
-git config --global user.email joel.chelliah@bekk.no
-
+echo -e "Get .gitconfig from dotfiles, and copy to the $HOME folder."
+read -p "Press [Enter] key after this..."
 
 ### Other Brew stuff
-echo "Installing other brew stuff..."
+echo -e "Installing other brew stuff..."
 brew install tree
 brew install wget
 brew install node
@@ -46,74 +46,29 @@ brew install rbenv
 
 
 ### Brew done
-echo "Cleaning up brew"
+echo -e "Cleaning up brew"
 brew cleanup
 
 
 ### Brew cask
-echo "Installing homebrew cask"
-brew install caskroom/cask/brew-cask
-
-
-## DOTFILES
-# TODO: Uncomment after dotfiles have been added to the repo.
-#echo "Copying dotfiles"
-# Run `install_dotfiles.sh`
-
+# echo "Installing homebrew cask"
+# brew install caskroom/cask/brew-cask
 
 
 ### ZSH & Oh My Zsh
-echo "Installing Oh My ZSH..."
+echo -e "Installing Oh My ZSH..."
 curl -L http://install.ohmyz.sh | sh
 
 read -p "Remember to complete the rest of the ZSH setup later! Press [Enter] to continue."
 
-echo "Setting ZSH as shell..."
+echo -e "Setting ZSH as shell..."
 chsh -s /bin/zsh
 
 
-### Cask install apps
-echo "installing apps with Cask..."
-
-# Apps
-apps=(
-    acorn
-    alfred
-    anki
-    bartender
-    cleanmymac
-    discord
-    dropbox
-    figma
-    firefox
-    folx
-    google-chrome
-    grammarly
-    imageoptim
-    lastpass
-    postman
-    rocket
-    skype
-    spectacle
-    spotify
-    steam
-    iterm2
-    visual-studio-code
-    vlc
-)
-
-# Install apps to /Applications
-# Default is: /Users/$user/Applications
-brew install --cask --appdir="/Applications" ${apps[@]}
-brew cleanup
-
-
-echo "Please setup and sync Dropbox."
-read -p "Press [Enter] key after this."
 
 
 ### Mac settings
-echo "Setting some Mac settings..."
+echo -e "Setting some Mac settings..."
 
 #"Disabling system-wide resume"
 defaults write NSGlobalDomain NSQuitAlwaysKeepsWindows -bool false
@@ -271,9 +226,7 @@ defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 # Don’t automatically rearrange Spaces based on most recent use
 defaults write com.apple.dock mru-spaces -bool false
 
-
-
 killall Finder
 
 
-echo "Done!"
+echo -e "Done!"
