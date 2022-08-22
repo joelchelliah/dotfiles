@@ -12,9 +12,7 @@ Might need to run again partially if there are any hiccups.
 
 ## 📝 Git config
 1. Copy **.gitconfig** to the `$HOME` folder.
-2. Install **diff-so-fancy** via `npm install -g diff-so-fancy`.  
-   > NB: `git diff` won't work until this step is done.
-
+2. Install [Difftastic](https://difftastic.wilfred.me.uk/installation.html) and follow instructions for setting up a better diff tool!
 
 ## 🐚 Oh my ZSH setup
 Should have already been installed during `setup.sh`.
