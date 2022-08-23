@@ -43,6 +43,11 @@ brew install tree
 brew install wget
 brew install node
 brew install rbenv
+# https://github.com/junegunn/fzf
+brew install fzf
+$(brew --prefix)/opt/fzf/install
+# https://github.com/sharkdp/bat#installation
+brew install bat
 
 
 ### Brew done
