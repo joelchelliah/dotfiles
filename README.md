@@ -55,7 +55,3 @@ Download and install iterm2 theme and powerlevel9k-supported font [here](https:/
 ## 📱 iPhone dev config
 - Install **Xcode** from the `App Store`.
 - Run `sudo xcodebuild -license` in the terminal and accept the license manually.
-
-
-## 🔍 Install fzf
-Useful command-line [fuzzy finder](https://github.com/junegunn/fzf). Integrates well with omzh!
