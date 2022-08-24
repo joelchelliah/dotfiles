@@ -13,7 +13,7 @@ Run `setup.sh` and follow the instructions. Might need to run again partially if
 ## 📝 Git config
 1. Clone this repo: `git clone git@github.com:joelchelliah/dotfiles.git`
 2. Delete existing .gitconfig: `rm ~/.gitconfig`
-3. Symlink .gitconfig from here: `ln -s ~/src/dotfiles/.gitignore ~/.gitignore`
+3. Symlink .gitconfig from here: `ln -s ~/src/dotfiles/.gitconfig ~/.gitconfig`
 4. Install [Difftastic](https://difftastic.wilfred.me.uk/installation.html) and follow instructions for setting up a better diff tool!
 
 ## 🐚 Oh my ZSH setup
