@@ -35,23 +35,24 @@ rm -rf ~/.oh-my-zsh/custom
 git clone git@github.com:joelchelliah/oh-my-zsh-custom.git ~/.oh-my-zsh/custom
 ```
 
-#### 🦾 Install powerlevel9k theme
+#### 🦾 Install powerlevel10k theme
 ```bash
-git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
-- More info [here](https://github.com/bhilburn/powerlevel9k/wiki/Install-Instructions#option-2-install-for-oh-my-zsh)
+- More info [here](https://github.com/romkatv/powerlevel10k#oh-my-zsh)
 
-#### 🔗 Symlink `.zshrc`
+#### 🔗 Symlink `.zshrc` and `.p10k.zsh`
 ```bash
-# Delete existing .zshrc
-rm ~/.zshrc
+# Delete existing .zshrc and .p10k.zsh
+rm ~/.zshrc  ~/.p10k.zsh
 
-# Link .zshrc from custom folder
+# Link .zshrc and .p10k.zsh from custom folder
 ln -s ~/.oh-my-zsh/custom/zshrc ~/.zshrc
+ln -s ~/.oh-my-zsh/custom/p10k.zsh ~/.p10k.zsh
 ```
 
-## 🎩 Iterm2 config
-Download and install iterm2 theme and powerlevel9k-supported font [here](https://github.com/joelchelliah/oh-my-zsh-custom/tree/master/iterm2-config)
+## 🎩 Terminal Config
+- Download and install Powerlevel10k-supported fonts [here](https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k)
 
 
 ## 📱 iPhone dev config
