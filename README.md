@@ -53,6 +53,7 @@ ln -s ~/.oh-my-zsh/custom/p10k.zsh ~/.p10k.zsh
 
 ## 🎩 Terminal Config
 - Download and install Powerlevel10k-supported fonts [here](https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k)
+- Restart terminal to flush fonts, then select the downloaded fonts in the preferences.
 
 
 ## 📱 iPhone dev config
