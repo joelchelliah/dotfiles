@@ -1,8 +1,6 @@
 [user]
 	name = Joel Chelliah
 	email = joel.chelliah@bekk.no
-[includeIf "gitdir:~/src/trafikkdata/"]
-    path = ~/.gitconfig.svv
 [github]
     user = joelchelliah
 [alias]

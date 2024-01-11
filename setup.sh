@@ -1,14 +1,15 @@
 #!/usr/bin/env bash
 
-echo -e "Creating an SSH key for you..."
-ssh-keygen -t rsa -C "joel.chelliah@bekk.no"
-eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/id_rsa
+# echo -e "Creating an SSH key for you..."
+# ssh-keygen -t ed25519 -C "joel.chelliah@bekk.no"
+# eval "$(ssh-agent -s)"
+# ssh-add --apple-use-keychain ~/.ssh/id_ed25519
 
-pbcopy < ~/.ssh/id_rsa.pu
-echo -e "Public key has been copied to the clipboard. Please add this public key to Github at:"
-echo -e "https://github.com/account/ssh \n"
-read -p "Press [Enter] key after this..."
+# pbcopy < ~/.ssh/id_ed25519.pub
+# echo -e "Public key has been copied to the clipboard. Please add this public key to Github at:"
+# echo -e "https://github.com/account/ssh \n"
+# echo -e "\nOptionally, you may also want to open or create `~/.ssh/config` and add your previous configurations \n"
+# read -p "Press [Enter] key after this..."
 
 
 # ### Xcode
@@ -30,12 +31,17 @@ read -p "Press [Enter] key after brew setup is finished..."
 brew update
 brew upgrade
 
+
 ### Git
 echo -e "Installing Git..."
 brew install git
 
-echo -e "Get .gitconfig from dotfiles, and copy to the $HOME folder."
-read -p "Press [Enter] key after this..."
+echo -e "Deleting existing .gitconfig and symlinking .gitconfig from .dotfiles..."
+rm -f ~/.gitconfig
+ln -s ~/src/dotfiles/.gitconfig ~/.gitconfig
+# This might of course fail if the folder structure does not match...
+# but it is importatnt to not use any relative paths when creating a symlink!
+
 
 ### Other Brew stuff
 echo -e "Installing other brew stuff..."
@@ -48,6 +54,8 @@ brew install fzf
 $(brew --prefix)/opt/fzf/install
 # https://github.com/sharkdp/bat#installation
 brew install bat
+# https://difftastic.wilfred.me.uk/installation.html
+brew install difftastic
 
 
 ### Brew done

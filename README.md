@@ -3,23 +3,15 @@
 When running on a brand new Mac, remember to update it to the lastest version before proceeding (**About this mac** → **Software update**).
 
 
+## 🛠️ Base setup
+1. Clone this repo: `git clone git@github.com:joelchelliah/dotfiles.git`.
+2. Run `setup.sh` and follow the instructions. Might need to run again partially if there are any hiccups.
 
-## 🛠️ Essential apps, tools and settings
-> Clone repo if git already available on mac, or wait until after setup.
-
-Run `setup.sh` and follow the instructions. Might need to run again partially if there are any hiccups.
-
-
-## 📝 Git config
-1. Clone this repo: `git clone git@github.com:joelchelliah/dotfiles.git`
-2. Delete existing .gitconfig: `rm ~/.gitconfig`
-3. Symlink .gitconfig from here: `ln -s ~/src/dotfiles/.gitconfig ~/.gitconfig`
-4. Install [Difftastic](https://difftastic.wilfred.me.uk/installation.html) and follow instructions for setting up a better diff tool!
 
 ## 🐚 Oh my ZSH setup
 Should have already been installed during `setup.sh`.
 
-Check by running `omz`. If not yet installed, run:
+Check by running `zsh`. If not yet installed, run:
 ```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
