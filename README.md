@@ -43,9 +43,10 @@ ln -s ~/.oh-my-zsh/custom/zshrc ~/.zshrc
 ln -s ~/.oh-my-zsh/custom/p10k.zsh ~/.p10k.zsh
 ```
 
-## 🎩 Terminal Config
+## 🎩 Powerlevel10K Config
 - Download and install Powerlevel10k-supported fonts [here](https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k)
 - Restart terminal to flush fonts, then select the downloaded fonts in the preferences.
+- The Warp AI terminal should now be fully set up by now, based on the cloned configs. Further changes to the customization can be done here: https://www.warp.dev/blog/how-to-set-up-powerlevel10k-on-warp
 
 
 ## 📱 iPhone dev config
