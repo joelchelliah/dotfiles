@@ -48,7 +48,8 @@ echo -e "Installing other brew stuff..."
 brew install tree
 brew install wget
 brew install node
-brew install rbenv
+# https://github.com/rbenv/rbenv
+brew install rbenv ruby-build
 # https://github.com/junegunn/fzf
 brew install fzf
 $(brew --prefix)/opt/fzf/install
