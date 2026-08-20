@@ -1,0 +1,16 @@
+cursor-style = bar
+cursor-style-blink = true
+# stops vi-mode from hijacking cursor shape
+shell-integration-features = no-cursor
+
+mouse-hide-while-typing = true
+
+# Moving the cursor at prompts by clicking on a location in the prompt text
+cursor-click-to-move = true
+
+# Copy selected text
+copy-on-select = true
+
+notify-on-command-finish = unfocused
+
+background-blur = macos-glass-clear
