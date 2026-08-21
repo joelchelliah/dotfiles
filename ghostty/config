@@ -14,3 +14,10 @@ copy-on-select = true
 notify-on-command-finish = unfocused
 
 background-blur = macos-glass-clear
+
+
+# ghostty-theme-mixer
+theme = Solarized Dark Patched
+background = 0f0f12
+font-family = "Fira Code"
+font-size = 14
