@@ -48,7 +48,7 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 # # # # # # # # # # # # # # # # # # # # # # # #
-# #                  PATH                    # #
+# #                  PATH                   # #
 # # # # # # # # # # # # # # # # # # # # # # # #
 
 export BIN="$HOME/bin"
@@ -62,7 +62,7 @@ path=(
 typeset -U path  # de-duplicate
 
 # # # # # # # # # # # # # # # # # # # # # # # #
-# #        LANGUAGE / RUNTIME VERSIONS       # #
+# #       LANGUAGE / RUNTIME VERSIONS       # #
 # # # # # # # # # # # # # # # # # # # # # # # #
 
 # mise replaces nvm, rbenv, pyenv and the hand-rolled JAVA_HOME export.
@@ -87,7 +87,7 @@ case ":$PATH:" in
 esac
 
 # # # # # # # # # # # # # # # # # # # # # # # #
-# #             APPLICATIONS                 # #
+# #             APPLICATIONS                # #
 # # # # # # # # # # # # # # # # # # # # # # # #
 
 ### ANDROID
@@ -112,8 +112,19 @@ export COMPOSE_DOCKER_CLI_BUILD=1
 ### FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+
 # # # # # # # # # # # # # # # # # # # # # # # #
-# #                COMPLETION                # #
+# #             TRAFIKKDATA                 # #
+# # # # # # # # # # # # # # # # # # # # # # # #
+
+if [[ -f "$GRADLE_PROPS" ]]; then
+  export TRAFIKKDATA_GH_PKG_TOKEN=$(sed -n 's/^GITHUB_TOKEN=//p' "$GRADLE_PROPS")
+  export FONTAWESOME_PACKAGE_TOKEN=$(sed -n 's/^FONTAWESOME_TOKEN=//p' "$GRADLE_PROPS")
+fi
+
+
+# # # # # # # # # # # # # # # # # # # # # # # #
+# #                COMPLETION               # #
 # # # # # # # # # # # # # # # # # # # # # # # #
 
 autoload -Uz compinit && compinit -i
@@ -124,7 +135,7 @@ ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 bindkey '^I' autosuggest-accept
 
 # # # # # # # # # # # # # # # # # # # # # # # #
-# #               KEY BINDINGS               # #
+# #               KEY BINDINGS              # #
 # # # # # # # # # # # # # # # # # # # # # # # #
 
 # Shift+Left / Shift+Right — word jump
@@ -136,14 +147,14 @@ bindkey "^[[1;10D" backward-kill-word
 bindkey "^[[1;10C" kill-word
 
 # # # # # # # # # # # # # # # # # # # # # # # #
-# #                  PROMPT                  # #
+# #                  PROMPT                 # #
 # # # # # # # # # # # # # # # # # # # # # # # #
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # # # # # # # # # # # # # # # # # # # # # # # #
-# #            MACHINE-LOCAL / SECRETS       # #
+# #           MACHINE-LOCAL / SECRETS       # #
 # # # # # # # # # # # # # # # # # # # # # # # #
 
 # Tokens, work-specific config, anything that must not be committed.
