@@ -19,7 +19,11 @@ background-blur = macos-glass-clear
 # ghostty-theme-mixer
 theme = Solarized Dark Patched
 foreground = 9999aa
-background = 0f0f12
+background = 1f1f2a
 font-family = "Fira Code"
 font-size = 14
 minimum-contrast = 3
+
+# Punchier green than Solarized's olive #859900
+palette = 2=#5faf5f
+palette = 10=#87d787
