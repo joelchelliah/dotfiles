@@ -1,0 +1,160 @@
+[user]
+	name = Joel Chelliah
+	# email lives in ~/.gitconfig.local (not committed) — see include below
+
+[github]
+	user = joelchelliah
+
+[include]
+	# Machine-local overrides: user.email, work-specific settings, etc.
+	# Created by install.sh if missing. Never committed.
+	path = ~/.gitconfig.local
+
+[alias]
+	main = !git symbolic-ref refs/remotes/origin/HEAD | cut -d'/' -f4
+	co = checkout
+	com = "!f(){ git checkout $(git main) $@;}; f"
+	st = status -sb
+	br = branch
+	ci = commit
+	unstage = reset HEAD
+	undo = reset --soft HEAD^
+	redo = commit -C ORIG_HEAD
+	hist = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen | %ad (%cr) | %C(bold blue)<%an>%Creset' --abbrev-commit --date=short
+
+	# View abbreviated SHA, description, and history graph of the latest 20 commits
+	l = log --pretty=oneline -n 20 --graph --abbrev-commit
+
+	# `git dft` is less to type than `git difftool`.
+	dft = difftool
+
+	# Show the diff between the latest commit and the current state
+	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+
+	# `git di $number` shows the diff between the state `$number` revisions ago and the current state
+	di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
+
+	# Pull in remote changes for the current repository and all its submodules
+	p = !"git pull; git submodule foreach git pull origin master"
+
+	# Clone a repository including all submodules
+	c = clone --recursive
+
+	# Show verbose output about tags, branches or remotes
+	tags = tag -l
+	branches = branch -a
+	remotes = remote -v
+
+	# Amend the currently staged files to the latest commit
+	amend = commit --amend --reuse-message=HEAD
+
+	# Interactive rebase with the given number of latest commits
+	reb = "!r() { git rebase -i HEAD~$1; }; r"
+
+	# Find branches containing commit
+	fb = "!f() { git branch -a --contains $1; }; f"
+
+	# Find tags containing commit
+	ft = "!f() { git describe --always --contains $1; }; f"
+
+	# Find commits by source code
+	fc = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short -S$1; }; f"
+
+	# Find commits by commit message
+	fm = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
+
+[apply]
+	# Detect whitespace errors when applying a patch
+	whitespace = fix
+
+[core]
+	# Prevent showing files whose names contain non-ASCII symbols as unversioned.
+	# http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
+	precomposeunicode = false
+
+	autocrlf = input
+
+[color]
+	# `auto`, not `always` — `always` injects ANSI escapes into piped output,
+	# which breaks scripts that parse git output.
+	ui = auto
+
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+
+[color "diff"]
+	meta = yellow bold
+	commit = green bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = "red bold 52"
+	newNormal = "green bold"
+	newHighlight = "green bold 22"
+
+[color "status"]
+	added = green
+	changed = yellow
+	untracked = cyan
+
+[diff]
+	# Detects copies as well as renames
+	renames = copies
+	external = difft
+	tool = difftastic
+	# Adds extra colors when running `git diff` to show blocks of lines that
+	# remain unchanged but have moved in the file
+	colorMoved = zebra
+
+[difftool]
+	prompt = false
+
+[difftool "difftastic"]
+	cmd = difft "$LOCAL" "$REMOTE"
+
+[diff "bin"]
+	# Use `hexdump` to diff binary files
+	textconv = hexdump -v -C
+
+[pager]
+	difftool = true
+
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+
+[help]
+	# Automatically correct and execute mistyped commands
+	autocorrect = 1
+
+[merge]
+	# Include summaries of merged commits in newly created merge commit messages
+	log = true
+
+[push]
+	default = simple
+
+	# Make `git push` push relevant annotated tags when pushing branches out.
+	followTags = true
+
+[credential]
+	helper = osxkeychain
+
+[pull]
+	rebase = true
+
+[fetch]
+	prune = true
+
+[rebase]
+	autoStash = true
+
+[init]
+	defaultBranch = main

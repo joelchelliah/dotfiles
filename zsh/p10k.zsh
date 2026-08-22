@@ -1810,6 +1810,34 @@
   #              seen the warning, or if you are unsure what this all means.
   typeset -g POWERLEVEL9K_INSTANT_PROMPT=verbose
 
+  ##############################[ Personal overrides ]###########################
+  # Merged in from the old powerlevel9k-customization.zsh (2026-08).
+  #
+  # These were carried over from a powerlevel9k config and had NO effect: they
+  # were sourced before ~/.p10k.zsh, so everything here was overwritten. The
+  # values below are the ones that were actually intended — uncomment to apply.
+  #
+  # NOTE: the VCS icon variables from the old file (STAGED/UNSTAGED/INCOMING/
+  # OUTGOING) are deliberately not reproduced. This config uses the custom
+  # `my_git_formatter` function above, which hardcodes its symbols (+ ! ⇡ ⇣) and
+  # never reads those variables. To change those symbols, edit my_git_formatter
+  # directly — see the "+42 if have staged changes" block.
+
+  # Old p9k intent: context in the prompt, middle-truncated 4-segment paths.
+  # Current p10k defaults are `dir vcs` and truncate_to_unique.
+  # typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
+  # typeset -g POWERLEVEL9K_SHORTEN_STRATEGY=truncate_middle
+  # typeset -g POWERLEVEL9K_SHORTEN_DIR_LENGTH=4
+
+  # Old p9k intent: date + time on the right. p10k's `time` segment is already
+  # in POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS; this just changes its format.
+  # typeset -g POWERLEVEL9K_TIME_FORMAT="%D{%H:%M   %d.%m.%y}"
+
+  # Only show `context` (user@host) over SSH or as root, not always.
+  # typeset -g POWERLEVEL9K_CONTEXT_{DEFAULT,SUDO}_CONTENT_EXPANSION=
+
+  ###############################################################################
+
   # Hot reload allows you to change POWERLEVEL9K options after Powerlevel10k has been initialized.
   # For example, you can type POWERLEVEL9K_BACKGROUND=red and see your prompt turn red. Hot reload
   # can slow down prompt by 1-2 milliseconds, so it's better to keep it turned off unless you

@@ -1,1 +1,7 @@
 .DS_Store
+
+# Machine-local overrides and secrets live in $HOME, never here — but guard
+# against anyone dropping a copy into the repo by mistake.
+*.local
+secret.zsh
+zsh/custom/cache/
