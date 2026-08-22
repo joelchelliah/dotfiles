@@ -15,6 +15,11 @@ notify-on-command-finish = unfocused
 
 background-blur = macos-glass-clear
 
+# Syntax is left,right / top,bottom — a single value sets both.
+# Must start new window to update
+window-padding-x = 12
+window-padding-y = 4
+
 
 # ghostty-theme-mixer
 theme = Solarized Dark Patched
