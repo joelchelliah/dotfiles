@@ -28,6 +28,9 @@
 	# `git dft` is less to type than `git difftool`.
 	dft = difftool
 
+	# Conventional line-by-line diff through delta, bypassing difftastic.
+	dd = "!f(){ git --no-pager diff --no-ext-diff --color=always \"$@\" | delta; }; f"
+
 	# Show the diff between the latest commit and the current state
 	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
 
@@ -117,6 +120,22 @@
 
 [difftool "difftastic"]
 	cmd = difft "$LOCAL" "$REMOTE"
+
+# difftastic (diff.external above) is the default for `git diff`. delta is
+# available as an opt-in pager for when a conventional line diff is easier to
+# read — use the `dd` alias above, or `git diff --no-ext-diff | delta`.
+[delta]
+	line-numbers = true
+	syntax-theme = Solarized (dark)
+	# `navigate` (n/N to jump between files) is deliberately off: it puts delta
+	# into an interactive less session that looks like a hang when the diff is
+	# short enough to fit on one screen.
+	navigate = false
+	# Don't page output that already fits on screen. -F quits immediately if it
+	# fits, -X leaves it on the normal screen instead of the alternate buffer
+	# (without both, a short diff flashes up and disappears, or looks like a hang).
+	paging = auto
+	pager = less -FRX
 
 [diff "bin"]
 	# Use `hexdump` to diff binary files

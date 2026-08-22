@@ -39,6 +39,8 @@ source $ZSH/oh-my-zsh.sh
 HOMEBREW_PREFIX="${HOMEBREW_PREFIX:-/opt/homebrew}"
 source "$HOMEBREW_PREFIX/share/powerlevel10k/powerlevel10k.zsh-theme" 2>/dev/null
 source "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh" 2>/dev/null
+# Syntax highlighting must be sourced LAST of the zsh plugins.
+source "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" 2>/dev/null
 
 # # # # # # # # # # # # # # # # # # # # # # # #
 # #                 LOCALE                  # #
@@ -111,6 +113,11 @@ export COMPOSE_DOCKER_CLI_BUILD=1
 
 ### FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+### ZOXIDE
+# `z <partial-dir>` jumps to the best match from your history; `zi` picks
+# interactively. Plain `cd` is left alone.
+eval "$(zoxide init zsh)"
 
 
 # # # # # # # # # # # # # # # # # # # # # # # #
